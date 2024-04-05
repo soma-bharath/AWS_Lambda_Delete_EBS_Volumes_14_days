@@ -20,6 +20,7 @@ def lambda_handler(event, context):
             # Calculate the difference in days between current time and attachment time
             attach_time = attachment_info['AttachTime']
             days_difference = (current_time - attach_time).days
+            #minutes_difference = (current_time - attach_time).total_seconds() / 60
 
             # If the volume is not in use for more than 14 days, delete it
             if days_difference > 14:
